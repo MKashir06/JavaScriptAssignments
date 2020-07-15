@@ -1531,3 +1531,391 @@
 // }
 // calcCircumference(radiusOfCircle);
 // calcArea(radiusOfCircle);
+
+
+
+
+
+/************************ASSIGNMENT NO.9*********************************/
+
+/***************** Chapter 38-42 (Functions, Switch Statements, While, Do While, Loops) ******************/
+// Task 1
+function aRaisedTob() {
+    var a, b, value;
+    a = +prompt("Enter value for a");
+    b = +prompt("Enter value for b");
+    value = power(a, b);
+    document.write("The value of a = " + a + " raised to b = " + b + " is '" + value + "' <br>");
+}
+
+function power(a, b) {
+    var value = a;
+    for (var i = 1; i < b; i++) {
+        value = value * a;
+    }
+    return value;
+}
+aRaisedTob();
+
+// Task 2
+function leapYear() {
+    var year = +prompt("Enter an year to know if it is leap year or not");
+    var leap = findLeapYear(year);
+    if (leap == 1) {
+        document.write(year + " is leap year <br>");
+    } else {
+        document.write(year + " is not a leap year <br>");
+    }
+}
+
+function findLeapYear(numYear) {
+    var i = 0;
+    if ((numYear % 4 && numYear % 100 && numYear % 400) == 0) {
+        i = 1;
+    } else {
+        i = 0;
+    }
+    return i;
+}
+leapYear();
+
+// Task 3
+function areaOfTriangle() {
+    var a = +prompt("Enter length of 'a' of triangle");
+    var b = +prompt("Enter length of 'b' of triangle");
+    var c = +prompt("Enter length of 'c' of triangle");
+
+    var lengths = valueOfS(a, b, c);
+    var area = lengths * (lengths - a) * (lengths - b) * (lengths - c);
+    document.write("Area of triangle of lengths " + a + ", " + b + " & " + c + " is " + area + "<br>");
+}
+
+function valueOfS(a, b, c) {
+    var S = (a + b + c) / 2;
+    return S;
+}
+areaOfTriangle();
+
+// Task 4
+function mainFunction() {
+    var sub1 = +prompt("Enter marks of subject 1 out of 100");
+    var sub2 = +prompt("Enter marks of subject 2 out of 100");
+    var sub3 = +prompt("Enter marks of subject 3 out of 100");
+
+    var averageMarks = averageFunc(sub1, sub2, sub3).toFixed(2);
+    document.write("Average marks: " + averageMarks + "<br>");
+
+    var percentObtained = percentFunc(sub1, sub2, sub3).toFixed(2);
+    document.write("Percentage Obtained: " + percentObtained + "%<br>");
+}
+
+function averageFunc(markSub1, markSub2, markSub3) {
+    var average = (markSub1 + markSub2 + markSub3) / 3;
+    return average;
+}
+
+function percentFunc(markSub1, markSub2, markSub3) {
+    var percentage = ((markSub1 + markSub2 + markSub3) / 300) * 100;
+    return percentage;
+}
+mainFunction();
+
+// Task 5
+function myIndexOf(string, char) {
+    var i = 0;
+    while (i < string.length) {
+        if (string[i] === char) {
+            return i;
+        }
+        i++;
+    }
+    return -1;
+}
+document.write(myIndexOf("My name is Kashir", "M") + "<br>");
+document.write(myIndexOf("My name is Kashir", "K") + "<br>");
+document.write(myIndexOf("My name is Kashir", "Z") + "<br>");
+
+// Task 6
+function removeVowels(string) {
+    var vowels = "aeiou";
+    var strArr = string.toLowerCase().split("");
+    var newArr = strArr.filter(function(letter) {
+        if (vowels.indexOf(letter) == -1) {
+            return letter;
+        }
+    });
+    var string = "";
+    newArr.forEach(function(letter) {
+        string += letter;
+    });
+    return string;
+}
+document.write("Text: The quick brown fox jumps over the lazy dog <br>");
+document.write("Vowels removed: " + removeVowels("The quick brown fox jumps over the lazy dog <br>"));
+
+// Task 7
+function findOccurrences() {
+    var sentence = "Pleases read this application and give me gratuity";
+    var count = 0;
+    var vowelsOccurs = false;
+
+    for (const letter of sentence) {
+        switch (letter) {
+            case 'A':
+            case 'E':
+            case 'I':
+            case 'O':
+            case 'U':
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u':
+                {
+                    if (vowelsOccurs) {
+                        count++;
+                    } else {
+                        vowelsOccurs = true;
+                    }
+                    break;
+                }
+            default:
+                vowelsOccurs = false
+        }
+    }
+    document.write("Sentence: " + sentence + "<br>");
+    return count;
+}
+document.write("Occurrences of two vowels in succession of line is: " + findOccurrences());
+
+// Task 8
+var userInputDistance = +prompt("Enter distance between two cities (in km.)");
+
+function distanceInMeters() {
+    var userInputDistanceInMeters = userInputDistance * 1000;
+    return userInputDistanceInMeters;
+}
+
+function distanceInFeet() {
+    var userInputDistanceInFeet = userInputDistance * 3281;
+    return userInputDistanceInFeet;
+}
+
+function distanceInInches() {
+    var userInputDistanceInInches = userInputDistance * 39370;
+    return userInputDistanceInInches;
+}
+
+function distanceInCentimeters() {
+    var userInputDistanceInCentimeters = userInputDistance * 100000;
+    return userInputDistanceInCentimeters;
+}
+document.write("Your input is: " + userInputDistance + "Km.<br>");
+document.write("Distance in meters: " + distanceInMeters() + "m<br>");
+document.write("Distance in feet: " + distanceInFeet() + "feet<br>");
+document.write("Distance in inches: " + distanceInInches() + "inch<br>");
+document.write("Distance in centimeters: " + distanceInCentimeters() + "cm<br>");
+
+// Task 9
+function calcOvertimeOfEmployees() {
+    var count = 1;
+
+    while (count <= 5) {
+        var workingHours = +prompt("Enter the working hours of employee no " + count);
+        document.write("Enter the working hours of employee no " + count + ": " + workingHours + "<br>");
+        // var workingHours = userInput;
+        if (workingHours > 40) {
+            var overTime = workingHours - 40;
+            var overTimePay = overTime * 12.00;
+            document.write("Employee No " + count + " overtime pay is " + overTimePay + "<br>");
+        } else {
+            document.write("You have to work for more than 40 hours to get over time pay <br>");
+        }
+        count++;
+    }
+}
+calcOvertimeOfEmployees();
+
+// Task 10
+function cashier() {
+    var amount = +prompt("Enter amount to withdraw (Multiple of 10 only)");
+    document.write("You will have " + Math.floor(amount / 100) + " hundred notes " + Math.floor((amount % 100) / 50) + " fifty notes & " + Math.floor(((amount % 100) % 50) / 10) + " ten notes. <br>");
+}
+cashier();
+
+
+/***************** Chapter 43-48 (Events) ******************/
+// Task 1
+function showingAlert() {
+    alert("It's an alert when you click this link");
+}
+
+// Task 2
+function alertForMobile() {
+    alert("Thanks for purchasing a phone from us");
+}
+
+// Task 3
+function deleteRows(rowId) {
+    var row = document.getElementById(rowId);
+    row.parentNode.removeChild(row);
+    console.log(row.parentNode);
+}
+
+// Task 4
+// Done in index.html
+
+// Task 5
+var clicks = 0;
+
+function counter1() {
+    clicks += 1;
+    document.getElementById("counter").innerHTML = clicks;
+}
+
+function counter2() {
+    clicks -= 1;
+    document.getElementById("counter").innerHTML = clicks;
+}
+
+
+/***************** Chapter 49-52 (Events) ******************/
+// Task 1
+function showOnlyData() {
+    document.getElementById("form").style.display = 'none';
+
+    var firstName = document.getElementById("firstName").value;
+    var lastName = document.getElementById("lastName").value;
+    var phoneNumber = document.getElementById("phoneNumber").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    var repeatPassword = document.getElementById("repeatPass").value;
+
+    document.write("<h4>You Entered:-</h4>");
+    document.write("Full Name: " + firstName + " " + lastName + "<br>");
+    document.write("Phone Number: " + phoneNumber + "<br>");
+    document.write("Email: " + email + "<br>");
+    document.write("Password: " + password + "<br>");
+    document.write("Repeated Password: " + repeatPassword + "<br>");
+}
+
+// Task 2
+function showMore() {
+    var showingRemainingPara = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos quisquam maxime nesciunt, suscipit nam ut labore ad nostrum soluta excepturi eaque magnam perspiciatis praesentium libero enim numquam possimus voluptatum hic. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda ipsa consectetur hic iusto veniam impedit rerum. Tempore, ad atque! Corporis hic temporibus quia omnis tempora vitae laboriosam dolorem dolores sint? Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi natus quibusdam at saepe, voluptatem ullam dolorum doloremque aspernatur laudantium debitis necessitatibus. Tempore commodi cum magni porro nesciunt numquam voluptate ratione? Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum harum quo consequuntur facere illum amet expedita vero perspiciatis iste adipisci nobis excepturi commodi culpa, at totam eos. In, odit minus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi voluptatum ex in, ratione nobis perspiciatis officiis dignissimos libero non odit iusto esse reiciendis quasi facilis animi veritatis eius blanditiis? Cumque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi harum accusamus laborum sit, sapiente, rem totam nihil culpa iste asperiores modi reprehenderit a cupiditate eligendi molestiae ut dolorem qui deleniti. Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quasi repudiandae at, autem harum repellendus. Nam laborum ipsa illo eum molestiae libero maxime? Praesentium, impedit similique aliquid earum aspernatur ratione! Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora velit, officia voluptate odio sit corporis quasi eius rerum? Ullam eos tempore autem at tempora necessitatibus cum qui blanditiis nesciunt asperiores. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet vel magni, distinctio tempora ea enim illo sint asperiores perferendis eaque non, optio nostrum modi libero nam eum qui ducimus debitis!"
+    document.getElementById("showMore").innerHTML = showingRemainingPara;
+}
+
+// Task 3
+function showStudentDetails() {
+    document.getElementById("form2").style.display = 'none';
+
+    var firstName2 = document.getElementById("firstName2").value;
+    var lastName2 = document.getElementById("lastName2").value;
+    var yearLevel = document.getElementById("yearLevel").value;
+    var degreeProgram = document.getElementById("degree").value;
+    var birthDate = document.getElementById("birthDate").value;
+    var presentAddress = document.getElementById("presentAddress").value;
+    var permanentAddress = document.getElementById("permanentAddress").value;
+    var phoneNumber2 = document.getElementById("phoneNumber2").value;
+    var email2 = document.getElementById("email2").value;
+    var password2 = document.getElementById("password2").value;
+    var repeatPassword2 = document.getElementById("repeatPass2").value;
+
+    var studentTable = document.getElementById("studentDetailsTable");
+
+    studentTable.childNodes[1].childNodes[2].childNodes[5].innerHTML = firstName2;
+    studentTable.childNodes[1].childNodes[4].childNodes[5].innerHTML = lastName2;
+    studentTable.childNodes[1].childNodes[6].childNodes[5].innerHTML = yearLevel;
+    studentTable.childNodes[1].childNodes[8].childNodes[5].innerHTML = degreeProgram;
+    studentTable.childNodes[1].childNodes[10].childNodes[5].innerHTML = birthDate;
+    studentTable.childNodes[1].childNodes[14].childNodes[5].innerHTML = presentAddress;
+    studentTable.childNodes[1].childNodes[16].childNodes[5].innerHTML = permanentAddress;
+    studentTable.childNodes[1].childNodes[18].childNodes[5].innerHTML = phoneNumber2;
+    studentTable.childNodes[1].childNodes[20].childNodes[5].innerHTML = email2;
+    studentTable.childNodes[1].childNodes[22].childNodes[5].innerHTML = password2;
+    studentTable.childNodes[1].childNodes[24].childNodes[5].innerHTML = repeatPassword2;
+
+}
+var studentTable = document.getElementById("studentDetailsTable");
+var genderValue;
+
+function genderFunc(gender) {
+    genderValue = document.getElementById("genderValue").innerHTML = gender;
+}
+studentTable.childNodes[1].childNodes[12].childNodes[5].innerHTML = genderValue;
+
+
+var form = document.getElementById("form2");
+
+function handleForm(event) {
+    event.preventDefault();
+}
+form.addEventListener('submit', handleForm);
+
+
+
+/***************** Chapter 58-67 (DOM) ******************/
+// Task 1
+/*** i ***/
+var mainContent = document.getElementById("main-content");
+
+/*** ii ***/
+function showChildElements() {
+    var child = mainContent.childNodes;
+    var txt = "";
+    for (var i = 0; i < child.length; i++) {
+        txt = txt + child[i].nodeName + "<br>";
+    }
+    document.getElementById("childNodes").innerHTML = txt;
+}
+
+/*** iii ***/
+var renderClass = mainContent.getElementsByClassName("render");
+for (var i = 0; i <= renderClass.length; i++) {
+    var content = renderClass[i].innerHTML;
+    document.write(content + "<br>");
+}
+
+/*** iv & v ***/
+function fillInputFields() {
+    document.getElementById("first-name").value = "Muhammad";
+    document.getElementById("last-name").value = "Kashir";
+    document.getElementById("email").value = "kashir3160@gmail.com";
+}
+
+
+// Task 2
+/*** i ***/
+var nodeTypeOfID = document.getElementById("form-content").nodeType;
+document.write("Node type of id 'form-content' is: " + nodeTypeOfID + "<br><br>");
+
+/*** ii ***/
+var nodeTypeOfID2 = document.getElementById("lastName").nodeType;
+document.write("Node type of id 'lastName' is: " + nodeTypeOfID2 + "<br>");
+var nodeTypeOfChildOfID2 = document.getElementById("lastName").childNodes[0].nodeType;
+document.write("Node type of child node of id 'lastName' is: " + nodeTypeOfChildOfID2 + "<br><br>");
+
+/*** iii ***/
+function updateChildNodes() {
+    var textNode = document.createTextNode("Last Name: Walker");
+    var updateChildNode = document.getElementById("lastName").childNodes[0];
+    updateChildNode.replaceChild(textNode, updateChildNode.childNodes[0]);
+}
+
+/*** iv ***/
+var fetchingParentFirstChild = document.getElementById("main-content").firstChild.nodeName;
+document.write("First Child of id 'main-content' is: " + fetchingParentFirstChild + "<br>");
+var fetchingParentLastChild = document.getElementById("main-content").lastChild.nodeName;
+document.write("Last Child of id 'main-content' is: " + fetchingParentLastChild + "<br><br>");
+
+/*** v ***/
+var fetchingPreviousSibling = document.getElementById("lastName").previousSibling.nodeName;
+document.write("Previous Sibling of id 'lastName' is: " + fetchingPreviousSibling + "<br>");
+var fetchingNextSibling = document.getElementById("lastName").nextSibling.nodeName;
+document.write("Next Sibling of id 'lastName' is: " + fetchingNextSibling + "<br><br>");
+
+/*** vi ***/
+var getParentNode = document.getElementById("email").parentNode.nodeName;
+var getParentNodeType = document.getElementById("email").parentNode.nodeType;
+document.write("Parent Node of element having id 'email' is: " + getParentNode + "<br>");
+document.write("Node type of element having id 'email' is: " + getParentNodeType + "<br>");

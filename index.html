@@ -4,10 +4,471 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Assignment 5</title>
+    <title>JavaScript Assignment 5, 6 & 9</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../bootstrap-4.4.1-dist/css/bootstrap.min.css">
 </head>
 
 <body>
+    <!--------------------- Chapter 43-48 (EVENTS) ---------------->
+    <!-- Task 1 -->
+    <div>
+        <a href="#" onclick="showingAlert()">Click me for alert</a>
+    </div>
+
+    <br><br><br>
+
+
+    <!-- Task 2 -->
+    <h2>Mobile Phone lookup</h2>
+    <div class="mobAlign">
+        <div class="card" style="width: 5rem;" onclick="alertForMobile()">
+            <img src="../../Images/RealmeX3SuperZoom-b.jpg" alt="Realme X3 Super Zoom" class="card-img-top">
+            <p class="card-text">Realme X3 Super Zoom</p>
+        </div>
+        <div class="card" style="width: 5rem;" onclick="alertForMobile()">
+            <img src="../../Images/SamsungGalaxyA31-b.jpg" alt="Samsung Galaxy A31" class="card-img-top">
+            <p class="card-text">Samsung Galaxy A31</p>
+        </div>
+        <div class="card" style="width: 5rem;" onclick="alertForMobile()">
+            <img src="../../Images/HuaweiNova7i-b.jpg" alt="Huawei Nova 7i" class="card-img-top">
+            <p class="card-text">Huawei Nova 7i</p>
+        </div>
+        <div class="card" style="width: 5rem;" onclick="alertForMobile()">
+            <img src="../../Images/OppoA92-b.jpg" alt="Oppo A92" class="card-img-top">
+            <p class="card-text">Oppo A92</p>
+        </div>
+        <div class="card" style="width: 5rem;" onclick="alertForMobile()">
+            <img src="../../Images/SamsungGalaxyA21s-b.jpg" alt="Samsung Galaxy A21s" class="card-img-top">
+            <p class="card-text">Samsung Galaxy A21s</p>
+        </div>
+    </div>
+
+    <br><br><br>
+
+
+    <!-- Task 3 -->
+    <div>
+        <table>
+            <tr>
+                <th>Index</th>
+                <th>Name</th>
+                <th>Class</th>
+            </tr>
+            <tr id="row1">
+                <td>0</td>
+                <td>Jones</td>
+                <td>10</td>
+                <td>
+                    <button onclick="deleteRows('row1')" type="button" class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+            <tr id="row2">
+                <td>1</td>
+                <td>Doe</td>
+                <td>9</td>
+                <td>
+                    <button onclick="deleteRows('row2')" type="button" class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+            <tr id="row3">
+                <td>2</td>
+                <td>Mark</td>
+                <td>10</td>
+                <td>
+                    <button onclick="deleteRows('row3')" type="button" class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+            <tr id="row4">
+                <td>3</td>
+                <td>James</td>
+                <td>8</td>
+                <td>
+                    <button onclick="deleteRows('row4')" type="button" class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+            <tr id="row5">
+                <td>4</td>
+                <td>Charles</td>
+                <td>10</td>
+                <td>
+                    <button onclick="deleteRows('row5')" type="button" class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+            <tr id="row6">
+                <td>5</td>
+                <td>Donald</td>
+                <td>8</td>
+                <td>
+                    <button onclick="deleteRows('row6')" type="button" class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+            <tr id="row7">
+                <td>6</td>
+                <td>Martin</td>
+                <td>9</td>
+                <td>
+                    <button onclick="deleteRows('row7')" type="button" class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+            <tr id="row8">
+                <td>7</td>
+                <td>Jake</td>
+                <td>9</td>
+                <td>
+                    <button onclick="deleteRows('row8')" type="button" class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+            <tr id="row9">
+                <td>8</td>
+                <td>Peter</td>
+                <td>10</td>
+                <td>
+                    <button onclick="deleteRows('row9')" type="button" class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+            <tr id="row10">
+                <td>9</td>
+                <td>Walker</td>
+                <td>8</td>
+                <td>
+                    <button onclick="deleteRows('row10')" type="button" class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <br><br><br>
+
+
+    <!-- Task 4 -->
+    <div class="card" style="width: 20rem;">
+        <img src="../../Images/car1.jpg" onMouseover="src='../../Images/car2.png'" onMouseout="src='../../Images/car1.jpg'">
+    </div>
+
+    <br><br><br>
+
+
+    <!-- Task 5 -->
+    <div>
+        <h4>Counter: <span id="counter">0</span></h4>
+        <button type="button" class="btn btn-success" onclick="counter1()" width="50">Increase</button>
+        <button type="button" class="btn btn-danger" onclick="counter2()" width="50">Decrease</button>
+    </div>
+
+    <br><br><br>
+
+
+
+
+    <!--------------------- Chapter 49-52 (EVENTS) ---------------->
+    <!-- Task 1 -->
+    <div id="form">
+        <h2>For Signup Click the Button</h2>
+
+        <button class="btn btn-success" onclick="document.getElementById('signUpForm').style.display='block'" style="width:auto;">Sign Up</button>
+
+        <div id="signUpForm" class="signUp">
+            <span onclick="document.getElementById('signUpForm').style.display='none'" class="close" title="Close signUp">&times;</span>
+            <form class="signUp-content">
+                <div class="container">
+                    <h1>Sign Up</h1>
+                    <p>Please fill in this form to create an account.</p>
+                    <hr>
+                    <label for="f-name"><b>First Name</b></label>
+                    <input id="firstName" type="text" placeholder="Enter First Name" name="f-name" required>
+
+                    <label for="l-name"><b>Last Name</b></label>
+                    <input id="lastName" type="text" placeholder="Enter Last Name" name="l-name" required>
+
+                    <label for="phone"><b>Phone Number</b></label>
+                    <input id="phoneNumber" type="number" placeholder="Enter Phone Number" name="phone" required>
+
+                    <label for="email"><b>Email</b></label>
+                    <input id="email" type="text" placeholder="Enter Email" name="email" required>
+
+                    <label for="psw"><b>Password</b></label>
+                    <input id="password" type="password" placeholder="Enter Password" name="psw" required>
+
+                    <label for="psw-repeat"><b>Repeat Password</b></label>
+                    <input id="repeatPass" type="password" placeholder="Repeat Password" name="psw-repeat" required>
+
+                    <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+    </label>
+
+                    <p>By creating an account you agree to our <a href="#" style="color:#0363c2">Terms & Privacy</a>.</p>
+
+                    <div class="actionBtn">
+                        <button class="btn btn-danger" type="button" onclick="document.getElementById('signUpForm').style.display='none'" class="cancelBtn">Cancel</button>
+                        <button class="btn btn-success" type="submit" class="signUpBtn" onclick="showOnlyData()">Sign Up</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <br><br><br>
+
+
+    <!-- Task 2 -->
+    <div>
+        <p id="showMore">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos quisquam maxime nesciunt, suscipit nam ut labore ad nostrum soluta excepturi eaque magnam perspiciatis praesentium libero enim numquam possimus voluptatum hic.
+            <a href="javascript:void(0);" onclick="showMore()">Read more</a>
+        </p>
+    </div>
+
+    <br><br><br>
+
+
+    <!-- Task 3 -->
+    <div id="form2">
+        <h2>Enter Your Details (if you are student)</h2>
+
+        <button class="btn btn-success" onclick="document.getElementById('studentDetailForm').style.display='block'" style="width:auto;">Enter Details</button>
+
+        <div id="studentDetailForm" class="signUp">
+            <span onclick="document.getElementById('studentDetailForm').style.display='none'" class="close" title="Close signUp">&times;</span>
+            <form class="signUp-content" action="index.html" method="POST">
+                <div class="container">
+                    <h1>Student Details</h1>
+                    <p>Please enter your details in this form.</p>
+                    <hr>
+                    <label for="f-name"><b>First Name</b></label>
+                    <input id="firstName2" type="text" placeholder="Enter First Name" name="f-name" required>
+
+                    <label for="l-name"><b>Last Name</b></label>
+                    <input id="lastName2" type="text" placeholder="Enter Last Name" name="l-name" required>
+
+                    <label for="year"><b>Year Level</b></label>
+                    <input id="yearLevel" type="text" placeholder="Enter Your Current Year of Study" name="year" required>
+
+                    <label for="degree"><b>Degree Program</b></label>
+                    <input id="degree" type="text" placeholder="Enter Degree Program" name="degree" required>
+
+                    <label for="b-date"><b>Birth Date</b></label>
+                    <input id="birthDate" type="date" placeholder="Enter Your Birth Date" name="b-date" required>
+
+                    <label for="gender"><b>Gender</b></label>
+                    <input type="radio" name="gender" onclick="genderFunc(this.value)" value="Male" required>Male
+                    <input type="radio" name="gender" onclick="genderFunc(this.value)" value="Female" required>Female <br>
+
+                    <label for="present-address"><b>Present Address</b></label>
+                    <input id="presentAddress" type="text" placeholder="Enter Your Present Address" name="present-address" required>
+
+                    <label for="permanent-address"><b>Permanent Address</b></label>
+                    <input id="permanentAddress" type="text" placeholder="Enter Your Permanent Address" name="permanent-address" required>
+
+                    <label for="phone"><b>Phone Number</b></label>
+                    <input id="phoneNumber2" type="number" placeholder="Enter Phone Number" name="phone" required>
+
+                    <label for="email"><b>Email</b></label>
+                    <input id="email2" type="text" placeholder="Enter Email" name="email" required>
+
+                    <label for="psw"><b>Password</b></label>
+                    <input id="password2" type="password" placeholder="Enter Password" name="psw" required>
+
+                    <label for="psw-repeat"><b>Repeat Password</b></label>
+                    <input id="repeatPass2" type="password" placeholder="Repeat Password" name="psw-repeat" required>
+
+                    <div class="actionBtn">
+                        <button class="btn btn-danger" type="button" onclick="document.getElementById('studentDetailForm').style.display='none'" class="cancelBtn">Cancel</button>
+                        <button class="btn btn-success" type="submit" class="signUpBtn" onclick="showStudentDetails()">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br>
+    <div>
+        <table id="studentDetailsTable">
+            <tr>
+                <th>Index</th>
+                <th>Details</th>
+                <th>Value</th>
+            </tr>
+            <tr id="studentTableRow1">
+                <td>1</td>
+                <td>First Name</td>
+                <td id=" firstName2Value "></td>
+                <td>
+                    <button onclick="document.getElementById('form2').style.display='block'" type='button' class='btn btn-success'>Edit</button>
+                </td>
+                <td>
+                    <button onclick="deleteRows('studentTableRow1')" type='button' class='btn btn-danger'>Delete</button>
+                </td>
+            </tr>
+            <tr id="studentTableRow2">
+                <td>2</td>
+                <td>Last Name</td>
+                <td id="lastName2Value"></td>
+                <td>
+                    <button onclick="document.getElementById('form2').style.display='block'" type='button' class='btn btn-success'>Edit</button>
+                </td>
+                <td>
+                    <button onclick="deleteRows('studentTableRow2')" type='button' class='btn btn-danger'>Delete</button>
+                </td>
+            </tr>
+            <tr id="studentTableRow3">
+                <td>3</td>
+                <td>Year Level </td>
+                <td id=" yearLevelValue "></td>
+                <td>
+                    <button onclick="document.getElementById('form2').style.display='block'" type='button' class='btn btn-success'>Edit</button>
+                </td>
+                <td>
+                    <button onclick="deleteRows('studentTableRow3')" type='button' class='btn btn-danger'>Delete</button>
+                </td>
+            </tr>
+            <tr id="studentTableRow4">
+                <td>4</td>
+                <td>Degree Program </td>
+                <td id="degreeProgramValue"></td>
+                <td>
+                    <button onclick="document.getElementById('form2').style.display='block'" type='button' class='btn btn-success'>Edit</button>
+                </td>
+                <td>
+                    <button onclick="deleteRows('studentTableRow4')" type='button' class='btn btn-danger'>Delete</button>
+                </td>
+            </tr>
+            <tr id="studentTableRow5">
+                <td>5</td>
+                <td>Birth Date </td>
+                <td id=" birthDateValue "></td>
+                <td>
+                    <button onclick="document.getElementById('form2').style.display='block'" type='button' class='btn btn-success'>Edit</button>
+                </td>
+                <td>
+                    <button onclick="deleteRows('studentTableRow5')" type='button' class='btn btn-danger'>Delete</button>
+                </td>
+            </tr>
+            <tr id="studentTableRow6">
+                <td>6</td>
+                <td>Gender </td>
+                <td id="genderValue"></td>
+                <td>
+                    <button onclick="document.getElementById('form2').style.display='block'" type='button' class='btn btn-success'>Edit</button>
+                </td>
+                <td>
+                    <button onclick="deleteRows('studentTableRow6')" type='button' class='btn btn-danger'>Delete</button>
+                </td>
+            </tr>
+            <tr id="studentTableRow7">
+                <td>7</td>
+                <td>Present Address </td>
+                <td id=" presentAddressValue "></td>
+                <td>
+                    <button onclick="document.getElementById('form2').style.display='block'" type='button' class='btn btn-success'>Edit</button>
+                </td>
+                <td>
+                    <button onclick="deleteRows('studentTableRow7')" type='button' class='btn btn-danger'>Delete</button>
+                </td>
+            </tr>
+            <tr id="studentTableRow8">
+                <td>8</td>
+                <td>Permanent Address </td>
+                <td id="permanentAddressValue"></td>
+                <td>
+                    <button onclick="document.getElementById('form2').style.display='block'" type='button' class='btn btn-success'>Edit</button>
+                </td>
+                <td>
+                    <button onclick="deleteRows('studentTableRow8')" type='button' class='btn btn-danger'>Delete</button>
+                </td>
+            </tr>
+            <tr id="studentTableRow9">
+                <td>9</td>
+                <td>Phone Number </td>
+                <td id=" phoneNumber2Value "></td>
+                <td>
+                    <button onclick="document.getElementById('form2').style.display='block'" type='button' class='btn btn-success'>Edit</button>
+                </td>
+                <td>
+                    <button onclick="deleteRows('studentTableRow9')" type='button' class='btn btn-danger'>Delete</button>
+                </td>
+            </tr>
+            <tr id="studentTableRow10">
+                <td>10</td>
+                <td>Email </td>
+                <td id="email2Value"></td>
+                <td>
+                    <button onclick="document.getElementById('form2').style.display='block'" type='button' class='btn btn-success'>Edit</button>
+                </td>
+                <td>
+                    <button onclick="deleteRows('studentTableRow10')" type='button' class='btn btn-danger'>Delete</button>
+                </td>
+            </tr>
+            <tr id="studentTableRow11">
+                <td>11</td>
+                <td>Password </td>
+                <td id=" password2Value "></td>
+                <td>
+                    <button onclick="document.getElementById('form2').style.display='block'" type='button' class='btn btn-success'>Edit</button>
+                </td>
+                <td>
+                    <button onclick="deleteRows('studentTableRow11')" type='button' class='btn btn-danger'>Delete</button>
+                </td>
+            </tr>
+            <tr id="studentTableRow12">
+                <td>12</td>
+                <td>Repeated Password </td>
+                <td id="repeatPassword2Value"></td>
+                <td>
+                    <button onclick="document.getElementById('form2').style.display='block'" type='button' class='btn btn-success'>Edit</button>
+                </td>
+                <td>
+                    <button onclick="deleteRows('studentTableRow12')" type='button' class='btn btn-danger'>Delete</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <br><br><br>
+
+
+
+
+    <!--------------------- Chapter 58-67 (DOM) ---------------->
+    <!-- Task 1 -->
+    <p>Click button to fill the input fields of "form-content"
+        <button type="button" class="btn btn-primary" onclick="fillInputFields()">Click Me</button>
+    </p>
+    <div>
+        <h1> DOM </h1>
+        <div id="form-content" class="content">
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" />
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" />
+            <label for="email">Email</label>
+            <input type="text" id="email" />
+        </div>
+        <p>Click button to update the text of id "lastName"
+            <button type="button" class="btn btn-primary" onclick="updateChildNodes()">Click Me</button>
+        </p>
+        <div id="main-content" class="content">
+            <p class="render"> First Name : Alex</p>
+            <p class="render" id="lastName"><span>Last Name: Bank</span></p>
+            <p class="render"> Email : alexbank@example.com</p>
+            <p class="render"> Country : Pakistan </p>
+            <p class="render"> contact : +92 300 1234567</p>
+        </div>
+    </div>
+
+    <div>
+        <p>Click button to see the child nodes of "main-content"
+            <button type="button" class="btn btn-info" onclick="showChildElements()">Click Me</button>
+        </p>
+        <p id="childNodes"></p>
+    </div>
+
+
+
+
+
+
+
+
+
 
 
 

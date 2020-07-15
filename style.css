@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+}
+
+.mobAlign {
+    display: flex !important;
+    justify-content: space-between;
+}
+
+input[type=text],
+input[type=password],
+input[type=number],
+input[type=date] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=number]:focus,
+input[type=date]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+.cancelBtn {
+    padding: 14px 20px !important;
+}
+
+.cancelBtn,
+.signUpBtn {
+    float: left !important;
+    width: 100% !important;
+}
+
+.signUp {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #474e5d;
+    padding-top: 50px;
+}
+
+.signUp-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #ffffff !important;
+}
+
+.close:hover,
+.close:focus {
+    color: #ffffff !important;
+    cursor: pointer;
+}
+
+.actionBtn::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+@media screen and (max-width: 300px) {
+    .cancelBtn,
+    .signUpBtn {
+        width: 100%;
+    }
+}
